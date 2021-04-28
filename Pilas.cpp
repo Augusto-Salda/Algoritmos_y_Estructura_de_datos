@@ -37,7 +37,7 @@ int main()
             break;
         case 4:
             {
-
+                Obj1.getope();
             }
             break;
         case 5:
