@@ -26,6 +26,7 @@ public:
     cLista();
     ~cLista();
     bool vacia();
+    bool vacia2();
     void aniadir();
     void recorrer();
     void quitarFinal();
@@ -50,6 +51,13 @@ bool cLista::vacia(){
         return true;
     }
     else{
+        return false;
+    }
+}
+bool cLista::vacia2(){
+    if(inicio2==NULL || contador2==0){
+        return true;
+    }else{
         return false;
     }
 }
@@ -79,7 +87,7 @@ void cLista::AgregarPalabras()
         cout<<"Escriba una palabra a guardar: ";
         cin>>aux2->Palabra;
         aux2->next2=NULL;
-        if(vacia())
+        if(vacia2())
         {
             inicio2=fin2=aux2;
         }
@@ -94,7 +102,7 @@ void cLista::AgregarPalabras()
 
 void cLista::RecorrerPalabras()
 {
-        if (vacia()){
+        if (vacia2()){
         cout<<"No hay palabras en la lista"<<endl;
     }
     else{
@@ -273,13 +281,15 @@ int main(){
             case 9:{
                 system("clear");  
             }
-            case 10:{
+            break;
+            case 0:{
+                cout<<"Fin"<<endl;
+            }
+            break;
                 default:{
                 cout << "Ingrese una opción válida." <<endl;
-                }
             }
         }
-        
     }while(opcion!=0);
 
     return 0;
